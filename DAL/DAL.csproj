@@ -55,13 +55,9 @@
     <Compile Include="EF\OneStopContext.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
-    <Compile Include="Migrations\202405241644478_first.cs" />
-    <Compile Include="Migrations\202405241644478_first.Designer.cs">
-      <DependentUpon>202405241644478_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202405241710402_first2.cs" />
-    <Compile Include="Migrations\202405241710402_first2.Designer.cs">
-      <DependentUpon>202405241710402_first2.cs</DependentUpon>
+    <Compile Include="Migrations\202405250940103_first.cs" />
+    <Compile Include="Migrations\202405250940103_first.Designer.cs">
+      <DependentUpon>202405250940103_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repo\AdminRepo.cs" />
@@ -83,11 +79,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202405241644478_first.resx">
-      <DependentUpon>202405241644478_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202405241710402_first2.resx">
-      <DependentUpon>202405241710402_first2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202405250940103_first.resx">
+      <DependentUpon>202405250940103_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

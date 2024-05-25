@@ -53,7 +53,7 @@ namespace BLL.Services
             return data2;
         }
 
-        public static ProductDetailsPhoneDTO Update(ProductDTO data)
+        public static ProductDetailsPhoneDTO Update(ProductDetailsPhoneDTO data)
         {
             var config = new MapperConfiguration(c =>
             {
@@ -61,7 +61,7 @@ namespace BLL.Services
                 c.CreateMap<ProductDetailsPhone, ProductDetailsPhoneDTO>();
             });
             var mapper = new Mapper(config);
-            var dbobj = mapper.Map<Product>(data);
+            var dbobj = mapper.Map<ProductDetailsPhone>(data);
             var ret = DataAccessFactory.ProductDetailsPhoneDataAccess().Update(dbobj);
             return mapper.Map<ProductDetailsPhoneDTO>(ret);
         }

@@ -27,7 +27,7 @@ namespace OneStopShop.Controllers
         }
         [Route("api/product/add")]
         [HttpPost]
-        public HttpResponseMessage Add(ProductDTO Em)
+        public HttpResponseMessage Add(AddProductDTO Em)
         {
             try
             {

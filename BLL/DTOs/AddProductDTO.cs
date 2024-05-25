@@ -21,9 +21,10 @@ namespace BLL.DTOs
         public string OperatingSystem { get; set; }
         public string Ram { get; set; }
         public string Storage { get; set; }
-        public string Connectivity { get; set; }
         public string Color { get; set; }
-        public string tag { get; set; }
+        public string Tag { get; set; }
+        public string Variations { get; set; }
+        public string Description { get; set; }
         public byte[] Img1 { get; set; }
         public byte[] Img2 { get; set; }
         public byte[] Img3 { get; set; }

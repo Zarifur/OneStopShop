@@ -54,43 +54,43 @@ namespace BLL.Services
                 c.CreateMap<ProductDetailsPhone, ProductDetailsPhoneDTO>();
             });
             var mapper = new Mapper(config);
-
+            Random rnd = new Random();
+            int num = rnd.Next();
             var product = new ProductDTO()
             {
-                ProductId=pro.ProductId, 
+                //ProductId = num,
                 Name=pro.Name, 
+                UserId=1,
                 Title=pro.Title,   
                 CategoryId=pro.CategoryId,
                 TypeId =pro.TypeId,
                 Price =pro.Price,
-                Tag =pro.tag,
+                Tag =pro.Tag,
                 Brand=pro.Brand
             };
+            var dbproduct = DataAccessFactory.ProductDataAccess().Add(mapper.Map<Product>(product));
             Guid guid = Guid.NewGuid();
-            var aadmin = new ProductDetailsPhoneDTO()
+            var productDetails = new ProductDetailsPhoneDTO()
             {
-                //Email = admin.Email,
-                //Name = admin.Name,
-                //Gender = admin.Gender,
-                ////Address = em.Address,
-                ////Position = em.Position,
-                ////PhoneNumber = em.PhoneNumber,
-                ////joined = em.joined,
-                //Depertment = em.Depertment,
-                //AccNumber = 10,
-                //UId = guid.ToString(),
-            };
-            var dbuser = DataAccessFactory.UserDataAccess().Add(mapper.Map<User>(user));
+                ProductId=dbproduct.ProductId,
+                ModelName=pro.ModelName, 
+                OperatingSystem=pro.OperatingSystem,
+                //Ram =pro.Ram,
+                //Storage=pro.Storage,
+                //Connectivity=pro.Connectivity,
+                //Color=pro.Color, 
+                Tag=pro.Tag,
+                Variations=pro.Variations,
+                Description=pro.Description,
+                Quntity=pro.Quntity,
+                Img1=pro.Img1,
+                Img2 = pro.Img2,
+                Img3 = pro.Img3
+            };            
 
-
-            if (dbuser != null)
-            {
-
-                var dbadmin = DataAccessFactory.AdminDataAccess().Add(mapper.Map<Admin>(aadmin));
-                return null;
-            }
-
-            return 0;
+            var dbadmin = DataAccessFactory.ProductDetailsPhoneDataAccess().Add(mapper.Map<ProductDetailsPhone>(productDetails));
+            return null;
+          
         }
         public static bool Delete(int uid)
         {

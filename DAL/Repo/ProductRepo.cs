@@ -13,7 +13,16 @@ namespace DAL.Repo
     {
         public Product Add(Product obj)
         {
-            db.Products.Add(obj);
+            try
+            {
+                db.Products.Add(obj);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            
             if (db.SaveChanges() > 0) return obj;
             return null;
         }
