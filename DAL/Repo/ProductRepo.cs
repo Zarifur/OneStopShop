@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repo
 {
-    internal class ProductRepo : Repo, IRepo<Product, int, Product>
+    internal class ProductRepo : Repo, IRepo<Product, int, Product>,ITag
     {
         public Product Add(Product obj)
         {
@@ -53,6 +53,10 @@ namespace DAL.Repo
             if (db.SaveChanges() > 0) return obj;
             return null;
         }
-
+        public List<Product> GetTags(string tag)
+        {
+            var data=db.Products.Where(x=>x.Tag.Contains(tag)).ToList();
+            return data;
+        }
     }
 }

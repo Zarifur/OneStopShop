@@ -48,13 +48,24 @@
   <ItemGroup>
     <Compile Include="DTOs\AddProductDTO.cs" />
     <Compile Include="DTOs\AdminDTO.cs" />
+    <Compile Include="DTOs\CategoryDTO.cs" />
+    <Compile Include="DTOs\CustomerDTO.cs" />
+    <Compile Include="DTOs\LoginDTO.cs" />
+    <Compile Include="DTOs\PlacedOrderDTO.cs" />
     <Compile Include="DTOs\ProductDetailsPhoneDTO.cs" />
     <Compile Include="DTOs\ProductDTO.cs" />
-    <Compile Include="DTOs\UserAddEmpDTO.cs" />
+    <Compile Include="DTOs\ProductTypeDTO.cs" />
+    <Compile Include="DTOs\TokenDTO.cs" />
+    <Compile Include="DTOs\UserAddCusDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Services\AdminServices.cs" />
+    <Compile Include="Services\AuthServices.cs" />
+    <Compile Include="Services\CategoryServices.cs" />
+    <Compile Include="Services\CustomerServices.cs" />
+    <Compile Include="Services\PlacedOrderServices.cs" />
     <Compile Include="Services\ProductDetailsPhoneServices.cs" />
     <Compile Include="Services\ProductServices.cs" />
+    <Compile Include="Services\TypeServices.cs" />
     <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
   <ItemGroup>

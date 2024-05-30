@@ -48,23 +48,60 @@
     <Compile Include="EF\Models\Cart.cs" />
     <Compile Include="EF\Models\Categoty.cs" />
     <Compile Include="EF\Models\Customer.cs" />
+    <Compile Include="EF\Models\MyOrder.cs" />
+    <Compile Include="EF\Models\PlacedOrder.cs" />
     <Compile Include="EF\Models\Product.cs" />
     <Compile Include="EF\Models\ProductDetailsPhone.cs" />
     <Compile Include="EF\Models\ProductType.cs" />
+    <Compile Include="EF\Models\Token.cs" />
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="EF\OneStopContext.cs" />
     <Compile Include="Interface\IAuth.cs" />
     <Compile Include="Interface\IRepo.cs" />
+    <Compile Include="Interface\ITag.cs" />
     <Compile Include="Migrations\202405250940103_first.cs" />
     <Compile Include="Migrations\202405250940103_first.Designer.cs">
       <DependentUpon>202405250940103_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405281213557_first5.cs" />
+    <Compile Include="Migrations\202405281213557_first5.Designer.cs">
+      <DependentUpon>202405281213557_first5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405281255160_first51.cs" />
+    <Compile Include="Migrations\202405281255160_first51.Designer.cs">
+      <DependentUpon>202405281255160_first51.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405291534282_first4.cs" />
+    <Compile Include="Migrations\202405291534282_first4.Designer.cs">
+      <DependentUpon>202405291534282_first4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405300458354_fiest6.cs" />
+    <Compile Include="Migrations\202405300458354_fiest6.Designer.cs">
+      <DependentUpon>202405300458354_fiest6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405300513095_fiest61.cs" />
+    <Compile Include="Migrations\202405300513095_fiest61.Designer.cs">
+      <DependentUpon>202405300513095_fiest61.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405300619157_fiest62.cs" />
+    <Compile Include="Migrations\202405300619157_fiest62.Designer.cs">
+      <DependentUpon>202405300619157_fiest62.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405301010066_first8.cs" />
+    <Compile Include="Migrations\202405301010066_first8.Designer.cs">
+      <DependentUpon>202405301010066_first8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repo\AdminRepo.cs" />
+    <Compile Include="Repo\CartRepo.cs" />
     <Compile Include="Repo\CategoryRepo.cs" />
+    <Compile Include="Repo\CustomerRepo.cs" />
+    <Compile Include="Repo\MyOrderRepo.cs" />
+    <Compile Include="Repo\PlacedOrderRepo.cs" />
     <Compile Include="Repo\ProductDetailsPhoneRepo.cs" />
     <Compile Include="Repo\ProductRepo.cs" />
     <Compile Include="Repo\Repo.cs" />
+    <Compile Include="Repo\TokenRepo.cs" />
     <Compile Include="Repo\TypeRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
   </ItemGroup>
@@ -81,6 +118,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202405250940103_first.resx">
       <DependentUpon>202405250940103_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405281213557_first5.resx">
+      <DependentUpon>202405281213557_first5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405281255160_first51.resx">
+      <DependentUpon>202405281255160_first51.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405291534282_first4.resx">
+      <DependentUpon>202405291534282_first4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405300458354_fiest6.resx">
+      <DependentUpon>202405300458354_fiest6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405300513095_fiest61.resx">
+      <DependentUpon>202405300513095_fiest61.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405300619157_fiest62.resx">
+      <DependentUpon>202405300619157_fiest62.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405301010066_first8.resx">
+      <DependentUpon>202405301010066_first8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

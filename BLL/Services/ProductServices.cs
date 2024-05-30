@@ -21,6 +21,7 @@ namespace BLL.Services
             var mapper = new Mapper(config);
             return mapper.Map<List<ProductDTO>>(data);
         }
+
         public static ProductDTO Get(int uid)
         {
             var data = DataAccessFactory.ProductDataAccess().Get(uid);
@@ -61,7 +62,7 @@ namespace BLL.Services
                 //ProductId = num,
                 Name=pro.Name, 
                 UserId=1,
-                Title=pro.Title,   
+                //Title=pro.Title,   
                 CategoryId=pro.CategoryId,
                 TypeId =pro.TypeId,
                 Price =pro.Price,
@@ -74,7 +75,7 @@ namespace BLL.Services
             {
                 ProductId=dbproduct.ProductId,
                 ModelName=pro.ModelName, 
-                OperatingSystem=pro.OperatingSystem,
+                //OperatingSystem=pro.OperatingSystem,
                 //Ram =pro.Ram,
                 //Storage=pro.Storage,
                 //Connectivity=pro.Connectivity,
@@ -111,5 +112,56 @@ namespace BLL.Services
             var ret = DataAccessFactory.ProductDataAccess().Update(dbobj);
             return mapper.Map<ProductDTO>(ret);
         }
+        public static ProductDTO UpdateProduct(AddProductDTO pro)
+        {
+            var config = new MapperConfiguration(c =>
+            {
+                c.CreateMap<ProductDTO, Product>();
+                c.CreateMap<Product, ProductDTO>();
+                c.CreateMap<ProductDetailsPhoneDTO, ProductDetailsPhone>();
+                c.CreateMap<ProductDetailsPhone, ProductDetailsPhoneDTO>();
+            });
+            var mapper = new Mapper(config);
+            var product = new ProductDTO()
+            {
+                //ProductId = num,
+                Name = pro.Name,
+                UserId = 1,
+                //Title=pro.Title,   
+                CategoryId = pro.CategoryId,
+                TypeId = pro.TypeId,
+                Price = pro.Price,
+                Tag = pro.Tag,
+                Brand = pro.Brand,
+                Image=pro.Image
+            };
+            var dbproduct = DataAccessFactory.ProductDataAccess().Update(mapper.Map<Product>(product));
+            Guid guid = Guid.NewGuid();
+            var productDetails = new ProductDetailsPhoneDTO()
+            {
+                ProductId = dbproduct.ProductId,
+                ModelName = pro.ModelName, 
+                Tag = pro.Tag,
+                Variations = pro.Variations,
+                Description = pro.Description,
+                Quntity = pro.Quntity,
+                Img1 = pro.Img1,
+                Img2 = pro.Img2,
+                Img3 = pro.Img3
+            };
+
+            var dbadmin = DataAccessFactory.ProductDetailsPhoneDataAccess().Update(mapper.Map<ProductDetailsPhone>(productDetails));
+            return null;
+        }
+        public static List<ProductDTO> GetTag(string tag)
+        {
+            var data = DataAccessFactory.TagDataAccess().GetTags(tag);
+            var config = new MapperConfiguration(c => {
+                c.CreateMap<Product, ProductDTO>();
+            });
+            var mapper = new Mapper(config);
+            return mapper.Map<List<ProductDTO>>(data);
+        }
+
     }
 }

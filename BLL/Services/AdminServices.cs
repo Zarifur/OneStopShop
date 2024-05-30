@@ -12,7 +12,7 @@ namespace BLL.Services
 {
     public class AdminServices
     {
-        public static UserAddEmpDTO AddAdmin(UserAddEmpDTO admin)
+        public static UserAddCusDTO AddAdmin(UserAddCusDTO admin)
         {
             var config = new MapperConfiguration(c =>
             {
@@ -33,13 +33,8 @@ namespace BLL.Services
                 Email = admin.Email,
                 Name = admin.Name,
                 Gender = admin.Gender,
-                //Address = em.Address,
-                //Position = em.Position,
-                //PhoneNumber = em.PhoneNumber,
-                //joined = em.joined,
-                //Depertment = em.Depertment,
-                //AccNumber = 10,
-                //UId = guid.ToString(),
+                Address = admin.Address,
+
             };
             var dbuser = DataAccessFactory.UserDataAccess().Add(mapper.Map<User>(user));
 

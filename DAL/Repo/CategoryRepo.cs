@@ -12,7 +12,7 @@ namespace DAL.Repo
     {
         public Categoty Add(Categoty obj)
         {
-            throw new NotImplementedException();
+           return db.Categoties.Add(obj);
         }
 
         public bool Delete(int id)

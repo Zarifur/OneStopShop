@@ -39,9 +39,15 @@ namespace DAL.Repo
             throw new NotImplementedException();
         }
 
-        public User GetUser(string UId)
+        public Token GetToken(string token)
         {
-            var obj = db.Users.FirstOrDefault(x => x.UId.Equals(UId));
+            var obj = db.Tokens.FirstOrDefault(x => x.LoginToken.Equals(token));
+            return obj;
+        }
+
+        public User GetUser(string Email)
+        {
+            var obj = db.Users.FirstOrDefault(x => x.Email.Equals(Email));
             return obj;
         }
 

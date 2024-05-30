@@ -13,5 +13,7 @@ namespace BLL.DTOs
         public double Price { get; set; }
         public string Tag { get; set; }
         public string Brand { get; set; }
+        public string Image { get; set; }
+        public string Mun { get; set; }
     }
 }

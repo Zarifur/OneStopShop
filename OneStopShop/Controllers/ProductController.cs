@@ -57,14 +57,29 @@ namespace OneStopShop.Controllers
             }
         }
 
-        [Route("api/product/update")]
+        [Route("api/product/updateproduct")]
         [HttpPost]
         //[CustomerLogin]
-        public HttpResponseMessage Update(ProductDTO employee)
+        public HttpResponseMessage UpdateProduct(AddProductDTO pro)
         {
             try
             {
-                var data = ProductServices.Update(employee);
+                var data = ProductServices.UpdateProduct(pro);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+        [Route("api/product/update")]
+        [HttpPost]
+        //[CustomerLogin]
+        public HttpResponseMessage Update(ProductDTO pro)
+        {
+            try
+            {
+                var data = ProductServices.Update(pro);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)
@@ -81,6 +96,21 @@ namespace OneStopShop.Controllers
             try
             {
                 var data = ProductServices.Delete(ID);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+        [Route("api/product/tag/{tag}")]
+        [HttpGet]
+        //[IsLogged]
+        public HttpResponseMessage GetTag(string tag)
+        {
+            try
+            {
+                var data = ProductServices.GetTag(tag);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

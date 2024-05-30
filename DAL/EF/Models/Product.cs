@@ -23,6 +23,8 @@ namespace DAL.EF.Models
         public double Price { get; set; }
         public string Tag { get; set; }
         public string Brand { get; set; }
+        public string Image { get; set; }
+        public string Mun { get; set; }
         public virtual User User { get; set; }
         public virtual Categoty Categoty { get; set; }
         public virtual ProductType ProductType { get; set; }
